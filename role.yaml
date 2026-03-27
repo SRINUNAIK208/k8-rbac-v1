@@ -9,15 +9,45 @@ rules:
    verbs: ["list","watch","get"]
 ---
 apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
+metadata:
+  namespace: roboshop
+  name: roboshop-deploy 
+rules:
+-  apiGroups: [""]
+   resources: ["pods"]
+   verbs: ["list","watch","get"]
+
+- apiGroups: ["apps"]
+  resources: ["deployments"]
+  verbs: ["list","get","watch","create","update","delete"]
+---
+apiVersion: rbac.authorization.k8s.io/v1
 kind: RoleBinding
 metadata:
   namespace: roboshop
-  name: roboshop-trainee
+  name: roboshop-deploy
 subjects:
 - kind: User
-  name: srinu
+  name: suresh
   apiGroup: rbac.authorization.k8s.io
 roleRef:
   kind: Role
-  name: roboshop-trainee
+  name: roboshop-deploy
   apiGroup: rbac.authorization.k8s.io
+---
+
+# apiVersion: rbac.authorization.k8s.io/v1
+# kind: RoleBinding
+# metadata:
+#   namespace: roboshop
+#   name: roboshop-trainee
+# subjects:
+# - kind: User
+#   name: srinu
+#   apiGroup: rbac.authorization.k8s.io
+# roleRef:
+#   kind: Role
+#   name: roboshop-trainee
+#   apiGroup: rbac.authorization.k8s.io
+
