@@ -26,6 +26,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: aws-cli 
+  namespace: roboshop
 spec:
  serviceAccount: roboshop-mysql-secret-reader
  containers: 
