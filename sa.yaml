@@ -28,6 +28,7 @@ metadata:
   name: aws-cli 
 spec:
  serviceAccount: roboshop-mysql-secret-reader
- containers: aws-cli
- image: amazon/aws-cli
- command: ["sleep", "10000"]
+ containers: 
+ - name: aws-cli
+   image: amazon/aws-cli
+   command: ["sleep", "10000"]
