@@ -14,7 +14,7 @@ metadata:
   namespace: roboshop
   name: roboshop-trainee
 subjects:
-- kind: user
+- kind: User
   name: srinu
   apiGroup: rbac.authorization.k8s.io
 roleRef:
