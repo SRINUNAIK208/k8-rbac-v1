@@ -16,7 +16,7 @@ metadata:
 subjects:
 - kind: ServiceAccount
   name: roboshop-mysql-secret-reader 
-  apiGroup: ""
+  namespace: roboshop
 roleRef:
   kind: Role
   name: roboshop-sa
